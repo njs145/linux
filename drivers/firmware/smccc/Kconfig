@@ -1,4 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0-only
+menu "smccc drivers"
+
 config HAVE_ARM_SMCCC
 	bool
 	help
@@ -23,3 +25,12 @@ config ARM_SMCCC_SOC_ID
 	help
 	  Include support for the SoC bus on the ARM SMCCC firmware based
 	  platforms providing some sysfs information about the SoC variant.
+
+config MY_SMC_CC
+    tristate "My SMC CC driver"
+    depends on ARM64
+	default y
+    help
+      Simple platform driver to expose ARM SMCCC via /dev/my_smc_cc.
+	  
+endmenu
