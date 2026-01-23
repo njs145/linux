@@ -1,0 +1,5 @@
+config NX_ISR
+	tristate "ISR TEST"
+	default y
+	help
+	  isr test
